@@ -19,7 +19,7 @@
 <style>
 /* ====== RESET & BASE ====== */
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
-html,body{height:100%;height:100dvh;overflow:hidden;background:#0D1117}
+html,body{height:100%;height:100dvh;overflow:hidden;background:#0D1117;margin:0;padding:0;}
 
 :root{
   --bg:#0D1117;
@@ -54,9 +54,10 @@ html,body{height:100%;height:100dvh;overflow:hidden;background:#0D1117}
 #root{
   display:flex;flex-direction:column;
   height:100%;height:100dvh;
-  max-width:480px;margin:0 auto;
+  width:100%;max-width:480px;margin:0 auto;
   position:relative;overflow:hidden;
   background:var(--bg);
+  box-sizing:border-box;
 }
 
 /* ====== SPLASH ====== */
@@ -120,10 +121,12 @@ html,body{height:100%;height:100dvh;overflow:hidden;background:#0D1117}
 /* ====== BOTTOM NAV ====== */
 #nav{
   display:flex;
-  padding-bottom:max(env(safe-area-inset-bottom, 0px), 8px);
+  padding-bottom:max(env(safe-area-inset-bottom, 16px), 16px);
   background:var(--bg1);
   border-top:1px solid var(--border);
   flex-shrink:0;
+  position:relative;
+  z-index:10;
 }
 .nitem{
   flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
